@@ -164,8 +164,8 @@ Now, we can intercept the function arguments of the comparison in the native lib
 ```sh
 [edu@xps ~] >  r2 frida://spawn/usb//owasp.mstg.uncrackable2
  -- This computer has gone to sleep.
-[0x00000000]> \. /tmp/owasp2.js
-[0x00000000]> \dc
+[0x00000000]> :. /tmp/owasp2.js
+[0x00000000]> :dc
 resumed spawned process.
 [0x00000000]> !python -c "print 'A'*23"
 AAAAAAAAAAAAAAAAAAAAAAA
@@ -174,11 +174,11 @@ AAAAAAAAAAAAAAAAAAAAAAA
 strncmp(AAAAAAAAAAAAAAAAAAAAAAA,Thanks for all the fish)
 
 [0x00000000]>
-[0x00000000]> \iE libfoo.so
+[0x00000000]> :iE libfoo.so
 0x726a22cdac f Java_sg_vantagepoint_uncrackable2_CodeCheck_bar
 0x726a22cd8c f Java_sg_vantagepoint_uncrackable2_MainActivity_init
-[0x00000000]> .\iE* libfoo.so
-[0x00000000]> .\ii* libfoo.so
+[0x00000000]> .:iE* libfoo.so
+[0x00000000]> .:ii* libfoo.so
 [0x00000000]> s sym.fun.Java_sg_vantagepoint_uncrackable2_CodeCheck_bar
 [0x726a22cdac]> pdg
 Ghidra Decompiler Error: No function at this offset
